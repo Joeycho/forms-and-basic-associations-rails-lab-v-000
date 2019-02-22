@@ -4,6 +4,14 @@ class Song < ActiveRecord::Base
   belongs_to :genre
   has_many :notes
 
+  def genre_id=(name)
+    if name== nil || name == ""
+      errors.add(:genre, "Invalid genre name")
+    else
+      self.genre = Genre.find_or_create_by(name: name)
+    end
+  end
+
   def genre_name=(name)
     if name== nil || name == ""
       errors.add(:genre, "Invalid genre name")
