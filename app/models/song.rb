@@ -33,6 +33,7 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents=(contents)
+    binding.pry
     contents.each do |c|
       if c == nil || c==""
         errors.add(:notes, "Invalid content")
