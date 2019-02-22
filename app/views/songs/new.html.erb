@@ -19,14 +19,8 @@
   </datalist>
   <br />
 
-  <%= f.label :note_contents %>
-  <%= f.text_field :song_note_1 %>
-  <br />
-
-  <%= f.label :note_contents %>
-  <%= f.text_field :song_note_2 %>
-  <br />
-
+  <input name="song[notes][]" id="song_note_1" type="text">
+  <input name="song[notes][]" id="song_note_2" type="text">
 
   <%= f.submit %>
 <% end %>
